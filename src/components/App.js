@@ -1,6 +1,8 @@
+import ProductListing from "./ProductListing";
+
 const App = () => {
     return (<>
-        <h1 style={{color: "red"}}>Hello World!</h1>
+        <ProductListing />
     </>)
 }
 
