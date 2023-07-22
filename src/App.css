@@ -3,3 +3,25 @@
     justify-items: evenly-spaced;
     align-items: center;
 }
+
+.card {
+    transition: 0.3s !important;
+}
+
+.card:hover {
+    /* border: 2px solid grey !important; */
+    transform: scale(1.05);
+}
+
+.image-wrapper {
+    height: 280px;
+    width: 280px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
