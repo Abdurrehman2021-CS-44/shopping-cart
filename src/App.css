@@ -25,3 +25,7 @@
     width: 100%;
     object-fit: cover;
 }
+
+.btn {
+    border-radius: 25px;
+}
