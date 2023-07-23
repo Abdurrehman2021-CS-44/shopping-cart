@@ -4,9 +4,10 @@ import ProductContext from "../context/productContext";
 const Product = (props) => {
     const cart = useContext(ProductContext)
 
-    const handleClick = () => {
+    const handleClick = (e) => {
         console.log("Added to Cart")
         cart.addToCart(props.id);
+        e.preventDefault();
     }
 
     return (

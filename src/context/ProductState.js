@@ -10,14 +10,11 @@ const getInitialState = () => {
         initialState[i] = 0;
     }
 
-    initialState[1] = 1;
-    initialState[2] = 1;
-
     return initialState;
 }
 
 const ProductState = (props) => {
-    const [cartElement, setCartElement] = useState(getInitialState());
+    const [cartElement, setCartElement] = useState(getInitialState);
 
     const addToCart = (itemId) => {
         setCartElement((prevValue) => {
