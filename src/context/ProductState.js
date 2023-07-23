@@ -7,7 +7,7 @@ const getInitialState = () => {
     let initialState = {};
 
     for (let i = 0; i < products.length; i++){
-        initialState[i] = 0;
+        initialState[i] = 1;
     }
 
     return initialState;

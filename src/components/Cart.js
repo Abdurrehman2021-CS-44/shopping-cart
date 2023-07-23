@@ -9,13 +9,15 @@ const Cart = () => {
 
     console.log(cart);
 
+    const foundProducts = products.filter((product, index)=>{
+        return cart.cartElement[index] > 0 && cart.cartElement.hasOwnProperty(product.id);
+    })
+
     return (
         <>
             <div className="cart-elements">
                 {
-                    products.filter((product, index)=>{
-                        return cart.cartElement[index] > 0 && cart.cartElement.hasOwnProperty(product.id);
-                    }).map((product, index)=>{
+                    foundProducts.map((product)=>{
                         return (
                             <CartElement
                                 key={product.id}
@@ -29,6 +31,10 @@ const Cart = () => {
                     })
                 }
             </div>
+            {
+                foundProducts.length > 0 &&
+                <p className="total-price">Total Price: $ {foundProducts.map((product)=>{ return product.price*cart.cartElement[product.id]}).reduce((acc,price)=>{return acc+price})}</p>
+            }
         </>
     )
 }
