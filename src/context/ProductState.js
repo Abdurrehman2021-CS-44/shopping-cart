@@ -10,6 +10,9 @@ const getInitialState = () => {
         initialState[i] = 0;
     }
 
+    initialState[1] = 1;
+    initialState[2] = 1;
+
     return initialState;
 }
 

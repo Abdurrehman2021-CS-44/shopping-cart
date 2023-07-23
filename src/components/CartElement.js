@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext } from "react";
+import ProductContext from "../context/productContext";
 
 const CartElement = (props) => {
-    const [count, setCount] = useState(props.count);
+    const cart = useContext(ProductContext);
 
     return (
         <>
@@ -14,19 +15,12 @@ const CartElement = (props) => {
                     <h4>Price: $ {props.price}</h4>
                     <div className="input-elements">
                         <button onClick={() => {
-                            setCount((prevValue) => {
-                                if (prevValue !== 0){
-                                    return prevValue - 1;
-                                } else {
-                                    return prevValue
-                                }
-                            });
-                        }}>-</button><input type="text" value={count} /><button onClick={() => {
-                            setCount((prevValue) => {
-                                return prevValue + 1;
-                            });
+                            cart.removeFromCart(props.id);
+                        }}>-</button>
+                        <input type="text" value={cart.cartElement[props.id]} />
+                        <button onClick={() => {
+                            cart.addToCart(props.id);
                         }}>+</button>
-
                     </div>
                 </div>
                 <hr style={{width: "40%", margin: "0 auto"}}/>

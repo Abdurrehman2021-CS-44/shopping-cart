@@ -19,10 +19,12 @@ const Cart = () => {
                     }).map((product, index)=>{
                         return (
                             <CartElement
+                                key={product.id}
+                                id={product.id}
                                 image={product.image}
                                 title={product.title}
                                 price={product.price}
-                                count={cart.cartElement[index]}
+                                count={cart.cartElement[product.id]}
                             />
                         )
                     })
