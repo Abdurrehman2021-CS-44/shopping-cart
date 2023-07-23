@@ -121,3 +121,19 @@ input {
     margin-right: 5px;
     border-radius: 12px;
 }
+
+.empty {
+    text-align: center;
+    font-size: 2.7rem;
+    font-weight: bolder;
+    width: 46%;
+    margin: 40px auto;
+}
+
+.btn-positioning-empty {
+    text-align: center;
+}
+
+.btn-positioning-empty a{
+    border-radius: 12px;
+}
