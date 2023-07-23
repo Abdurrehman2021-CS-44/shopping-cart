@@ -34,13 +34,22 @@ const ProductState = (props) => {
         })
     }
 
+    const addToCartWithValue = (itemId, value) => {
+        setCartElement((prevValue) => {
+            return {
+                ...prevValue,
+                [itemId]: value > 0 ? value : 0
+            }
+        })
+    }
+
     const reinitializeCart = () => {
         setCartElement(getInitialState)
     }
 
     return (
         <>
-            <ProductContext.Provider value={{cartElement, addToCart, removeFromCart, reinitializeCart}}>
+            <ProductContext.Provider value={{cartElement, addToCart, removeFromCart, reinitializeCart, addToCartWithValue}}>
                 {props.children}
             </ProductContext.Provider>
         </>

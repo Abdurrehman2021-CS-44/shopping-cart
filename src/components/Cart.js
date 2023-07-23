@@ -19,6 +19,10 @@ const Cart = () => {
 
     return (
         <>
+            {
+                foundProducts.length > 0 && 
+                <h2 className="cart-title">Your cart items</h2>
+            }
             <div className="cart-elements">
                 {
                     foundProducts.map((product)=>{
