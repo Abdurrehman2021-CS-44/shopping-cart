@@ -7,11 +7,13 @@ import { Link} from 'react-router-dom';
 const Cart = () => {
     const cart = useContext(ProductContext);
 
-    console.log(cart);
-
     const foundProducts = products.filter((product, index)=>{
         return cart.cartElement[index] > 0 && cart.cartElement.hasOwnProperty(product.id);
     })
+
+    const handleClick = () => {
+        cart.reinitializeCart();
+    }
 
     return (
         <>
@@ -37,7 +39,7 @@ const Cart = () => {
                     <p className="total-price">Total Price: $ {foundProducts.map((product)=>{ return product.price*cart.cartElement[product.id]}).reduce((acc,price)=>{return acc+price})}</p>
                     <div className="btn-positioning">
                         <Link to="/"> <a className="btn btn-dark btn-lg">Continue Shopping</a> </Link>
-                        <a className="btn btn-dark btn-lg">Checkout</a>
+                        <a className="btn btn-dark btn-lg" onClick={handleClick}>Checkout</a>
                     </div>
                 </>
             }

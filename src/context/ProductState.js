@@ -7,7 +7,7 @@ const getInitialState = () => {
     let initialState = {};
 
     for (let i = 0; i < products.length; i++){
-        initialState[i] = 1;
+        initialState[i] = 0;
     }
 
     return initialState;
@@ -34,9 +34,13 @@ const ProductState = (props) => {
         })
     }
 
+    const reinitializeCart = () => {
+        setCartElement(getInitialState)
+    }
+
     return (
         <>
-            <ProductContext.Provider value={{cartElement, addToCart, removeFromCart}}>
+            <ProductContext.Provider value={{cartElement, addToCart, removeFromCart, reinitializeCart}}>
                 {props.children}
             </ProductContext.Provider>
         </>
