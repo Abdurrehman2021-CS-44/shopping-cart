@@ -111,3 +111,13 @@ input {
     font-weight: bold;
     font-size: 20px;
 }
+
+.btn-positioning {
+    margin: 0 28% 4%;
+}
+
+.btn-positioning a{
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 12px;
+}

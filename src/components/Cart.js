@@ -1,8 +1,8 @@
-import Header from "./Header";
 import CartElement from "./CartElement";
 import ProductContext from "../context/productContext";
 import { useContext } from "react";
 import products from "../products";
+import { Link} from 'react-router-dom';
 
 const Cart = () => {
     const cart = useContext(ProductContext);
@@ -33,7 +33,13 @@ const Cart = () => {
             </div>
             {
                 foundProducts.length > 0 &&
-                <p className="total-price">Total Price: $ {foundProducts.map((product)=>{ return product.price*cart.cartElement[product.id]}).reduce((acc,price)=>{return acc+price})}</p>
+                <>
+                    <p className="total-price">Total Price: $ {foundProducts.map((product)=>{ return product.price*cart.cartElement[product.id]}).reduce((acc,price)=>{return acc+price})}</p>
+                    <div className="btn-positioning">
+                        <Link to="/"> <a className="btn btn-dark btn-lg">Continue Shopping</a> </Link>
+                        <a className="btn btn-dark btn-lg">Checkout</a>
+                    </div>
+                </>
             }
         </>
     )
