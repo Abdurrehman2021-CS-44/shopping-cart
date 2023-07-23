@@ -5,7 +5,7 @@ import products from "../products";
 const ProductListing = () => {
     return (
         <>
-            <Header />
+            <h1 className="title">Abdur Rehman's Shop</h1>
             <div className="container my-5">
                 <div className="row">
                     {

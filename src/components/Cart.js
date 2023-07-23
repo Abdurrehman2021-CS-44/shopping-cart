@@ -11,7 +11,6 @@ const Cart = () => {
 
     return (
         <>
-            <Header />
             <div className="cart-elements">
                 {
                     products.filter((product, index)=>{
