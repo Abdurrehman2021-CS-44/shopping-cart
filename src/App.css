@@ -99,7 +99,7 @@ input {
 }
 
 .title{
-    padding: 7% 15%;
+    padding: 11% 15%;
     text-align: center;
     font-weight: bolder;
     font-size: 4rem;
@@ -127,7 +127,7 @@ input {
     font-size: 2.7rem;
     font-weight: bolder;
     width: 46%;
-    margin: 40px auto;
+    margin: 90px auto 40px;
 }
 
 .btn-positioning-empty {

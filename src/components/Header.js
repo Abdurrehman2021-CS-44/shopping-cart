@@ -18,7 +18,7 @@ const Header = () => {
 
     return (
         <>
-            <nav className="navbar bg-dark">
+            <nav className="navbar fixed-top bg-dark">
                 <div className="container-fluid">
                     <span className="navbar-brand mb-0 ms-auto text-light"><Link to="" style={linkStyling}>Shop</Link></span>
                     <Link to="/cart"><ShoppingCartOutlinedIcon style={styling}/></Link>
